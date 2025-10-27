@@ -28,8 +28,8 @@
     canvas.setAttribute("viewBox", viewBoxStr)
     
     const test = document.createElementNS(svgns, "image")
-    test.setAttribute("cx", viewBox.width / 2)
-    test.setAttribute("cy", viewBox.height / 2)
+    test.setAttribute("x", viewBox.width / 2)
+    test.setAttribute("y", viewBox.height / 2)
     test.setAttribute("height", 512)
     test.setAttribute("width", 512)
     test.setAttribute("href", "test.png");
