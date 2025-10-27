@@ -32,9 +32,13 @@
     
     canvas.setAttribute("viewBox", viewBoxStr)
 
-    const test = document.createElementNS(svgns, "test")
-    circle.setAttribute("cx", viewBox.width / 2)
-    circle.setAttribute("cy", viewBox.height / 2)
+    const test = document.createElementNS(svgns, "svg")
+    test.setAttribute("cx", viewBox.width / 2)
+    test.setAttribute("cy", viewBox.height / 2)
+    test.setAttribute("height", 512)
+    test.setAttribute("width", 512)
+    test.setAttribute("href", "test.png");
+    canvas.appendChild(test)
     
   </script>
   
