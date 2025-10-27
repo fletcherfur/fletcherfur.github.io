@@ -2,6 +2,11 @@
 <html>
 
 <div id="main">
+
+  <svg height="512" width="512" xmlns="http://www.w3.org/2000/svg">
+    <image id="test" width="512" height="512" href="test.png" />
+  </svg> 
+  
   <script>
     // Setup
     const svgns = "http://www.w3.org/2000/svg"
@@ -26,6 +31,10 @@
     ].join(" ")
     
     canvas.setAttribute("viewBox", viewBoxStr)
+
+    const test = document.createElementNS(svgns, "test")
+    circle.setAttribute("cx", viewBox.width / 2)
+    circle.setAttribute("cy", viewBox.height / 2)
     
   </script>
   
@@ -36,10 +45,6 @@
 </head>
   
 <body>
-
-<svg height="512" width="512" xmlns="http://www.w3.org/2000/svg">
-  <image width="512" height="512" href="test.png" />
-</svg> 
   
 </body>
 
