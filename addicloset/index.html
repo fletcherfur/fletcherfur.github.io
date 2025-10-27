@@ -31,17 +31,8 @@
     ].join(" ")
     
     canvas.setAttribute("viewBox", viewBoxStr)
-
-    // Something to click on
-    const circle = document.createElementNS(svgns, "circle")
-    circle.setAttribute("cx", viewBox.width / 2)
-    circle.setAttribute("cy", viewBox.height / 2)
-    circle.setAttribute("r", 15)
-    circle.setAttribute("fill", "#57cc8a")
     
-    canvas.appendChild(circle)
-    
-    const test = document.createElementNS(svgns, "svg")
+    const test = document.createElementNS(svgns, "image")
     test.setAttribute("cx", viewBox.width / 2)
     test.setAttribute("cy", viewBox.height / 2)
     test.setAttribute("height", 512)
