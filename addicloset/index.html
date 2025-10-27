@@ -2,11 +2,6 @@
 <html>
 
 <div id="main">
-
-  <svg height="512" width="512" xmlns="http://www.w3.org/2000/svg">
-    <image id="test" width="512" height="512" href="test.png" />
-  </svg> 
-  
   <script>
     // Setup
     const svgns = "http://www.w3.org/2000/svg"
@@ -22,7 +17,7 @@
     // Viewbox
     let bbox = canvas.getBoundingClientRect()
     const aspectRatio = bbox.width / bbox.height
-    const height = 100
+    const height = 1000
     const width = height * aspectRatio
     const viewBox = { minX: 0, minY: 0, width: width, height: height }
     
