@@ -34,6 +34,28 @@
     test.setAttribute("width", 512)
     test.setAttribute("href", "test.png");
     canvas.appendChild(test)
+
+    // Implementing the drag
+    let clicked = false
+    canvas.addEventListener("mousemove", (event) => {
+    
+        if (!clicked) {
+            return
+        }
+    
+        bbox = canvas.getBoundingClientRect()
+    
+        const x = (event.clientX - bbox.left) / bbox.width
+        const y = (event.clientY - bbox.top) / bbox.height
+    
+        test.setAttribute("cx", x * viewBox.width)
+        test.setAttribute("cy", y * viewBox.height)
+    })
+    
+    // Click detection
+    test.addEventListener("mousedown", (_) => { clicked = true })
+    test.addEventListener("mouseup", (_) => { clicked = false })
+    canvas.addEventListener("mouseleave", (_) => { clicked = false })
     
   </script>
   
