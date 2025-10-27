@@ -1,6 +1,36 @@
 <!doctype html>
 <html>
 
+<div id="main">
+  <script>
+    // Setup
+    const svgns = "http://www.w3.org/2000/svg"
+    const main = document.getElementById("main")
+    
+    const canvas = document.createElementNS(svgns, "svg")
+    canvas.setAttribute("width", "100%")
+    canvas.setAttribute("height", "100%")
+    canvas.style.border = "solid 2px #242930"
+    
+    main.appendChild(canvas)
+    
+    // Viewbox
+    let bbox = canvas.getBoundingClientRect()
+    const aspectRatio = bbox.width / bbox.height
+    const height = 100
+    const width = height * aspectRatio
+    const viewBox = { minX: 0, minY: 0, width: width, height: height }
+    
+    const viewBoxStr = [
+        viewBox.minX, viewBox.minY, viewBox.width, viewBox.height
+    ].join(" ")
+    
+    canvas.setAttribute("viewBox", viewBoxStr)
+    
+  </script>
+  
+</div>  
+  
 <head>
   Addi's Closet~
 </head>
@@ -8,11 +38,9 @@
 <body>
 
 <svg height="512" width="512" xmlns="http://www.w3.org/2000/svg">
-  <circle r="105" cx="150" cy="120" fill="lightblue" />
   <image width="512" height="512" href="test.png" />
-  Sorry, your browser does not support inline SVG.  
-</svg>
-
+</svg> 
+  
 </body>
 
   
