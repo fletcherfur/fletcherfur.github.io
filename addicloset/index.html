@@ -62,7 +62,7 @@
         velocity = (x - prevX) * 1000
         prevX = x
         console.log(velocity)
-        test.setAttribute("transform", `rotate(${velocity}, ${x * viewBox.width - 256}, ${viewBox.height / 3})`)        
+        test.setAttribute("transform", `rotate(${velocity}, ${x * viewBox.width}, ${viewBox.height / 3})`)        
         test.setAttribute("x", x * viewBox.width - 256)
         circle.setAttribute("cx", x * viewBox.width)
 
