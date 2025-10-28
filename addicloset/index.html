@@ -54,7 +54,7 @@
         velocity = x - prevX
         prevX = x
         console.log(velocity)
-        test.setAttribute("transform", "rotate(${velocity})")        
+        test.setAttribute("transform", `rotate(${velocity})`)        
         test.setAttribute("x", x * viewBox.width - 256)
         //test.setAttribute("y", y * viewBox.height - 256)
     })
