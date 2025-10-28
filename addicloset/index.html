@@ -51,6 +51,8 @@
     canvas.addEventListener("mousemove", (event) => {
         
         if (!clicked) {
+            velocity /= 2
+            test.setAttribute("transform", `rotate(${velocity}, ${x * viewBox.width}, ${viewBox.height / 3})`)        
             return
         }
     
