@@ -31,6 +31,7 @@
     
     const test = document.createElementNS(svgns, "image")
     test.setAttribute("x", viewBox.width / 2)
+    let x = viewBox.width / 2
     prevX = viewBox.width / 2
     test.setAttribute("y", viewBox.height / 3)
     test.setAttribute("height", 512)
@@ -58,7 +59,7 @@
     
         bbox = canvas.getBoundingClientRect()
     
-        const x = (event.clientX - bbox.left) / bbox.width
+        x = (event.clientX - bbox.left) / bbox.width
         //const y = (event.clientY - bbox.top) / bbox.height
 
         velocity = (x - prevX) * 2000
