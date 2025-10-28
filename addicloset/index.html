@@ -59,7 +59,7 @@
         const x = (event.clientX - bbox.left) / bbox.width
         //const y = (event.clientY - bbox.top) / bbox.height
 
-        velocity = (x - prevX) * 1000
+        velocity = (x - prevX) * 2000
         prevX = x
         console.log(velocity)
         test.setAttribute("transform", `rotate(${velocity}, ${x * viewBox.width}, ${viewBox.height / 3})`)        
