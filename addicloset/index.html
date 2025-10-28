@@ -48,8 +48,8 @@
         const x = (event.clientX - bbox.left) / bbox.width
         const y = (event.clientY - bbox.top) / bbox.height
     
-        test.setAttribute("x", x * viewBox.width + 256)
-        test.setAttribute("y", y * viewBox.height + 256)
+        test.setAttribute("x", x * viewBox.width - 256)
+        test.setAttribute("y", y * viewBox.height - 256)
     })
     
     // Click detection
