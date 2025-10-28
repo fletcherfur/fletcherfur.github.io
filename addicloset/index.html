@@ -6,6 +6,8 @@
     // Setup
     const svgns = "http://www.w3.org/2000/svg"
     const main = document.getElementById("main")
+    let velocity = 0
+    let prevX = 0
     
     const canvas = document.createElementNS(svgns, "svg")
     canvas.setAttribute("width", "100%")
@@ -29,6 +31,7 @@
     
     const test = document.createElementNS(svgns, "image")
     test.setAttribute("x", viewBox.width / 2)
+    prevX = viewBox.width / 2
     test.setAttribute("y", viewBox.height / 3)
     test.setAttribute("height", 512)
     test.setAttribute("width", 512)
@@ -38,7 +41,7 @@
     // Implementing the drag
     let clicked = false
     canvas.addEventListener("mousemove", (event) => {
-    
+        
         if (!clicked) {
             return
         }
@@ -47,7 +50,9 @@
     
         const x = (event.clientX - bbox.left) / bbox.width
         //const y = (event.clientY - bbox.top) / bbox.height
-    
+
+        velocity = x - prevX
+        test.setAttribute("transform", "rotate(velocity, 0, 0)")        
         test.setAttribute("x", x * viewBox.width - 256)
         //test.setAttribute("y", y * viewBox.height - 256)
     })
