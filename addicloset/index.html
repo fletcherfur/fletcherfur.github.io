@@ -38,6 +38,14 @@
     test.setAttribute("href", "test.png");
     canvas.appendChild(test)
 
+    const circle = document.createElementNS(svgns, "circle")
+    circle.setAttribute("cx", viewBox.width / 2)
+    circle.setAttribute("cy", viewBox.height / 3)
+    circle.setAttribute("r", 15)
+    circle.setAttribute("fill", "#57cc8a")
+    
+    canvas.appendChild(circle)
+
     // Implementing the drag
     let clicked = false
     canvas.addEventListener("mousemove", (event) => {
@@ -56,6 +64,8 @@
         console.log(velocity)
         test.setAttribute("transform", `rotate(${velocity}, ${x * viewBox.width - 256}, ${viewBox.height / 3})`)        
         test.setAttribute("x", x * viewBox.width - 256)
+        circle.setAttribute("x", x * viewBox.width - 256)
+
         //test.setAttribute("y", y * viewBox.height - 256)
     })
     
